@@ -32,8 +32,8 @@ def reset_enemy_pos():
 # dear landon, it seems that get_new_gen() is a fancier way of simply saying "return False"
 # we say that (if get_new_gen() == True:) inside of our watcher.py, but that will always be false,
 # resulting in our code not running
-INT_HEIGHT = INITIAL_INT_HEIGHT
-INT_WIDTH = INITIAL_INT_WIDTH
+INT_HEIGHT = map_height
+INT_WIDTH = map_width
 
 while True:
    INT_WIDTH = random.randrange(11+((levelCounter-1)*2),14+((levelCounter-1)*2),2)

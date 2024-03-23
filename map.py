@@ -1,8 +1,8 @@
 from settings import *
 from watcher import *
 import random
-map_length = INITIAL_INT_HEIGHT
-map_width = INITIAL_INT_WIDTH
+map_length = map_height
+map_width = map_width
 
 TEXTURE_MAPPING = {'.':-1, 'w':0,'D': 1, 'S':2}
 #text_map = [''] *map_length 
@@ -76,7 +76,7 @@ def final_generation():
 
 def generate_level():
   global player_start_pos, enemy_start_pos, text_map, world_map, map_width, map_length, start_x
-  print("MAP:"+str(INITIAL_INT_HEIGHT) + "," + str(INITIAL_INT_WIDTH))
+  print("MAP:"+str(map_height) + "," + str(map_width))
   #map_length = INT_HEIGHT
   #map_width = INT_WIDTH
   text_map = [['w' for _ in range(map_width)] for _ in range(map_length)]

@@ -4,8 +4,8 @@ import random
 
 #game settings
 TILE = 100
-INITIAL_INT_WIDTH = 11
-INITIAL_INT_HEIGHT = 11
+map_width = 11
+map_height = 11
 WIDTH = 1200
 HEIGHT = 800
 HALF_WIDTH = WIDTH // 2

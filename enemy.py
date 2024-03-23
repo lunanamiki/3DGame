@@ -73,7 +73,7 @@ class Enemy:
       for dx, dy in [(0,1),(0,-1),(1,0),(-1,0)]:
         neighbor = (current[0]+dx, current[1]+dy)
         new_g_score = g_score[current]+1
-        if 0 <= neighbor[0] and neighbor[0]< INITIAL_INT_WIDTH and 0<= neighbor[1] and neighbor[1]< INITIAL_INT_HEIGHT:
+        if 0 <= neighbor[0] and neighbor[0]< map_width and 0<= neighbor[1] and neighbor[1]< map_height:
           texture_index = get_texture_index(neighbor[0] * TILE, neighbor[1] * TILE)
           if texture_index != 0 and (neighbor not in g_score or new_g_score < g_score[neighbor]):
             g_score[neighbor] = new_g_score
