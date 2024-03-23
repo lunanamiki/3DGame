@@ -1,0 +1,1 @@
+9999999999{"name": "edx-opaque-keys", "version": "2.5.1", "summary": "", "platform": null, "requires_dist": ["pymongo (<4.0,>=2.7.2)", "stevedore (>=0.14.1)", "typing-extensions"], "requires_python": "", "files": [], "_cache_version": "1.0.0"}

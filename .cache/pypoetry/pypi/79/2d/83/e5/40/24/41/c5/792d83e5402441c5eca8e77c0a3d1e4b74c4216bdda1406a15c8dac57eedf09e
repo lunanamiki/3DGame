@@ -1,0 +1,1 @@
+9999999999{"name": "stevedore", "version": "5.1.0", "summary": "Manage dynamic plugins for Python applications", "platform": null, "requires_dist": ["pbr (!=2.1.0,>=2.0.0)"], "requires_python": ">=3.8", "files": [], "_cache_version": "1.0.0"}

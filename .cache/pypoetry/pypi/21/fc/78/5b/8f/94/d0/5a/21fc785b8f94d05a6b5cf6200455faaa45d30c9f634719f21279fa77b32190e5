@@ -1,0 +1,1 @@
+9999999999{"name": "player", "version": "0.6.1", "summary": "Pyramid view layers", "platform": "UNKNOWN", "requires_dist": ["setuptools", "pyramid >= 1.4", "pyramid_jinja2"], "requires_python": null, "files": [], "_cache_version": "1.0.0"}
