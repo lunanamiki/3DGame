@@ -20,7 +20,7 @@ generateNewLevel = False
 levelCounter = 1
 sc = pygame.display.set_mode((WIDTH,HEIGHT))
 clock = pygame.time.Clock()
-generate_level()
+generate_level(map_width,map_height)
 player = Player()
 enemy = Enemy()
 pygame.display.set_caption('3D GAME')
@@ -36,9 +36,6 @@ INT_HEIGHT = map_height
 INT_WIDTH = map_width
 
 while True:
-   INT_WIDTH = random.randrange(11+((levelCounter-1)*2),14+((levelCounter-1)*2),2)
-   INT_HEIGHT = random.randrange(11+((levelCounter-1)*2),14+((levelCounter-1)*2),2)
-   print("WATCHER:"+str(INT_HEIGHT) + "," + str(INT_WIDTH))
    
    for event in pygame.event.get():
     if event.type == QUIT:
@@ -46,12 +43,17 @@ while True:
       sys.exit()
       
    player.movement()
-   enemy.movement(player.x, player.y)
+   enemy.movement(player.x, player.y, INT_WIDTH, INT_HEIGHT)
    
 
    if player.isGenerating():
+     INT_WIDTH = random.randrange(11+((levelCounter-1)*2),14+((levelCounter-1)*2),2)
+     INT_HEIGHT = random.randrange(11+((levelCounter-1)*2),14+((levelCounter-1)*2),2)
+     print("WATCHER:"+str(INT_HEIGHT) + "," + str(INT_WIDTH))
+   
      generateNewLevel = True
      levelCounter += 1
+     generate_level(INT_WIDTH,INT_HEIGHT)
      reset_enemy_pos()
      
    sc.fill(BLACK)

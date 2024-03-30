@@ -74,11 +74,11 @@ def final_generation():
   else:
     final_generation()
 
-def generate_level():
+def generate_level(w,l):
   global player_start_pos, enemy_start_pos, text_map, world_map, map_width, map_length, start_x
-  print("MAP:"+str(map_height) + "," + str(map_width))
-  #map_length = INT_HEIGHT
-  #map_width = INT_WIDTH
+  print("MAP:"+str(l) + "," + str(w))
+  map_length = l
+  map_width = w
   text_map = [['w' for _ in range(map_width)] for _ in range(map_length)]
   start_x, start_y = random.randrange(1, map_width,2), random.randrange(1, map_length,2)
   generate_maze(start_x, start_y)

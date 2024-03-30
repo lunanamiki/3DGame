@@ -22,8 +22,8 @@ class Enemy:
   def getpath(self):
     return self.path
 
-  def movement(self, playerx, playery):
-    self.path = self.find_path(playerx, playery)
+  def movement(self, playerx, playery, map_w,map_l):
+    self.path = self.find_path(playerx, playery, map_w,map_l)
     if len(self.path) == 0:
       self.move_towards(playerx,playery)
     if self.path:
@@ -50,7 +50,7 @@ class Enemy:
   def resetpos(self):
     self.x,self.y = getenemypos()
 
-  def find_path(self, playerx, playery):
+  def find_path(self, playerx, playery, map_w, map_l):
     start = (int(self.x // TILE), int(self.y // TILE))
     end = (int(playerx // TILE), int(playery //TILE))
 
@@ -73,7 +73,7 @@ class Enemy:
       for dx, dy in [(0,1),(0,-1),(1,0),(-1,0)]:
         neighbor = (current[0]+dx, current[1]+dy)
         new_g_score = g_score[current]+1
-        if 0 <= neighbor[0] and neighbor[0]< map_width and 0<= neighbor[1] and neighbor[1]< map_height:
+        if 0 <= neighbor[0] and neighbor[0]< map_w and 0<= neighbor[1] and neighbor[1]< map_l:
           texture_index = get_texture_index(neighbor[0] * TILE, neighbor[1] * TILE)
           if texture_index != 0 and (neighbor not in g_score or new_g_score < g_score[neighbor]):
             g_score[neighbor] = new_g_score

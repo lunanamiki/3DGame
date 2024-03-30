@@ -53,7 +53,7 @@ class Player:
     if not(nextxtile, self.y // TILE * TILE, texture_index) in getworldmap():
       self.x = nextx
     elif texture_index == 1:
-      generate_level()
+      #generate_level()
       self.awaitingGeneration = True
       self.x,self.y = getplayerpos()
 
@@ -63,7 +63,7 @@ class Player:
     if not(self.x // TILE * TILE, nextytile, texture_index) in getworldmap():
       self.y = nexty
     elif texture_index == 1:
-      generate_level()
+      #generate_level()
       self.awaitingGeneration = True
       self.x,self.y = getplayerpos()
       
